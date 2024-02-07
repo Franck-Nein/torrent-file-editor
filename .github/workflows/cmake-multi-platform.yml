@@ -1,4 +1,4 @@
-name: Build with CMake and Qt4
+name: Build with CMake and Qt5
 
 on:
   push:
@@ -18,9 +18,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo add-apt-repository ppa:rock-core/qt4
         sudo apt-get update
-        sudo apt-get install -y qt4-dev-tools libqt4-dev cmake qt4-qmake
+        sudo apt-get install qt5-default cmake qtbase5-dev qt5-qmake
 
     - name: Build project
       run: |

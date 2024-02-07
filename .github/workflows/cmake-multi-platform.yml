@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install qt5-default cmake qtbase5-dev qt5-qmake
+        sudo apt-get install qt5-default cmake qtbase5-dev qt5-qmake qttools5-dev
 
     - name: Build project
       run: |

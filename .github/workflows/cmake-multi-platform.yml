@@ -20,6 +20,7 @@ jobs:
       run: |
         sudo add-apt-repository ppa:rock-core/qt4
         sudo apt-get update
+        sudo apt install qt4-dev-tools libqt4-dev libqt4-core libqt4-gui
         sudo apt-get install -y cmake qt4-qmake
 
     - name: Build project

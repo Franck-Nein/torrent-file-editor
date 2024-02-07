@@ -1,0 +1,34 @@
+name: Build with CMake and Qt4
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake qt4-qmake
+
+    - name: Build project
+      run: |
+        mkdir build && cd build
+        cmake -DCMAKE_BUILD_TYPE=Release -DQT4_BUILD=ON ..
+        make
+
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: built-artifacts
+        path: build  # Change this path to the directory where your artifacts are generated

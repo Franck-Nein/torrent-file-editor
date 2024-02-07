@@ -24,7 +24,7 @@ jobs:
     - name: Build project
       run: |
         mkdir build && cd build
-        cmake -DCMAKE_BUILD_TYPE=Release -DQT4_BUILD=ON ..
+        cmake -DCMAKE_BUILD_TYPE=Release -DQT5_BUILD=ON ..
         make
 
     - name: Archive artifacts
